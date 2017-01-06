@@ -1,0 +1,44 @@
+box: debian
+build:
+    steps:
+        - script:
+            name: build script
+            code: |
+                echo "build pipeline"
+
+deploy:
+    steps:
+        - script:
+            name: deploy script
+            code: |
+                echo "deploy pipeline"
+a:
+    steps:
+        - script:
+            name: pipeline a
+            code: |
+                echo "pipeline a"
+
+b:
+    steps:
+        - script:
+            name: pipeline b
+            code: |
+                echo "pipeline b"
+
+c:
+    steps:
+        - script:
+            name: pipeline c
+            code: |
+                echo "pipeline c"
+
+check-links:
+    box: python:2.7-slim
+    steps:
+        - script:
+            name: python information pipeline
+            code: |
+                echo "python version $(python --version) running"
+                echo "pip version $(pip --version) running"
+                echo "hello world $(python ./hello.py dorky)"
