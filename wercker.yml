@@ -1,17 +1,4 @@
 box: debian
-build:
-    steps:
-        - script:
-            name: build script
-            code: |
-                echo "build pipeline"
-
-deploy:
-    steps:
-        - script:
-            name: deploy script
-            code: |
-                echo "deploy pipeline"
 a:
     steps:
         - script:
@@ -32,12 +19,18 @@ c:
             name: pipeline c
             code: |
                 echo "pipeline c"
+d:
+    steps:
+        - script:
+            name: pipeline d
+            code: |
+                echo "pipeline d"
 
-check-links:
+foobar:
     box: python:2.7-slim
     steps:
         - script:
-            name: python information pipeline
+            name: foobar pipeline
             code: |
                 echo "python version $(python --version) running"
                 echo "pip version $(pip --version) running"
